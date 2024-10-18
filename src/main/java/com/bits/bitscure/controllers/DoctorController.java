@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -28,6 +29,11 @@ public class DoctorController {
         return doctorService.getAllDoctors();
     }
     
+    @GetMapping("/doctors/{id}")
+    public Doctors getDoctorById(@PathVariable Long id) {
+        return doctorService.getDoctorsById(id);
+    }
+    
     @DeleteMapping("/doctors/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)  // Returns 204 No Content if successful
     public void deleteDoctor(@PathVariable Long id) {
@@ -37,6 +43,11 @@ public class DoctorController {
     @PutMapping("/doctors/{id}")
     public Doctors updateDoctor(@PathVariable Long id, @RequestBody Doctors doctor) {
         return doctorService.updateDoctor(id, doctor);
+    }
+    
+    @PostMapping("/doctors")
+    public Doctors addDoctor(@RequestBody Doctors doctor) {
+        return doctorService.addDoctor(doctor);
     }
 	
 }

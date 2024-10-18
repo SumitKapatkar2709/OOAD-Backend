@@ -3,6 +3,7 @@ package com.bits.bitscure.service.impl;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bits.bitscure.entities.Doctors;
@@ -12,16 +13,22 @@ import com.bits.bitscure.service.DoctorService;
 @Service
 public class DoctorServiceImpl implements DoctorService {
 
-    private final DoctorRepository doctorRepository;
+	@Autowired
+    private  DoctorRepository doctorRepository;
 
-    public DoctorServiceImpl(DoctorRepository doctorRepository) {
-        this.doctorRepository = doctorRepository;
-    }
 
     @Override
     public List<Doctors> getAllDoctors() {
         return doctorRepository.findAll();
     }
+    
+    @Override
+    public Doctors getDoctorsById(Long id) {
+        Optional<Doctors> doctor = doctorRepository.findById(id);
+
+        return doctor.orElseThrow(() -> new RuntimeException("Doctor not found with id: " + id));
+    }
+    
     
     @Override
     public void deleteDoctorById(Long id) {
@@ -43,5 +50,10 @@ public class DoctorServiceImpl implements DoctorService {
         } else {
             throw new RuntimeException("Doctor not found with id: " + id);
         }
+    }
+    
+    @Override
+    public Doctors addDoctor(Doctors doctor) {
+        return doctorRepository.save(doctor);
     }
 }
