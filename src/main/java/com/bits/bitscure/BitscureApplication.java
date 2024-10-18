@@ -8,7 +8,7 @@ public class BitscureApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BitscureApplication.class, args);
-		System.out.println("Hello BITS...");;
+		System.out.println("Hello BITS...");
 	}
 
 }
