@@ -3,6 +3,7 @@ package com.bits.bitscure.controllers;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,7 +23,9 @@ public class DoctorController {
     public DoctorController(DoctorService doctorService) {
         this.doctorService = doctorService;
     }
-
+    
+    
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/doctors")
     public List<Doctors> getAllDoctors() {
         return doctorService.getAllDoctors();
