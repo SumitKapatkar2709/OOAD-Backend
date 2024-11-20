@@ -18,6 +18,8 @@ public interface DoctorService {
 	Doctor saveOrUpdateDoctor(Doctor doctor);
 
 	List<Doctor> getAllUnverifiedDoctors();
+
+	void verifyDoctor(Long id);
     
     
     

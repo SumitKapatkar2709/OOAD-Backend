@@ -157,6 +157,15 @@ public class DoctorServiceImpl implements DoctorService {
         generateSlotsForDoctor(savedDoctor);
         return savedDoctor;
     }
+    
+    
+    @Override
+    public void verifyDoctor(Long doctorId) {
+        Doctor doctor = doctorRepository.findById(doctorId)
+                .orElseThrow();
+        doctor.setIsVerified(true);
+        doctorRepository.save(doctor);
+    }
 
 
 }
