@@ -38,14 +38,18 @@ public class DoctorController {
         List<DoctorResponseDTO> doctorResponseDTOs = new ArrayList<>();
         for (Doctor doctor : doctors) {
             DoctorResponseDTO doctorResponseDTO = new DoctorResponseDTO(
-                doctor.getDoctorId(),
-                doctor.getName(),
-                doctor.getAge(),
-                doctor.getSpecialization(),
-                doctor.getDoctorAddress(),
-                doctor.getYearsOfExperience(),
-                doctor.getHoliday(),
-                doctor.getIsVerified()
+            		doctor.getDoctorId(),
+            	    doctor.getName(),
+            	    doctor.getAge(),
+            	    doctor.getSpecialization(),
+            	    doctor.getDoctorAddress(),
+            	    doctor.getYearsOfExperience(),
+            	    doctor.getHoliday(),
+            	    doctor.getIsVerified(),
+            	    doctor.getBreakStartTime(),
+            	    doctor.getBreakEndTime(),
+            	    doctor.getDutyStartTime(),
+            	    doctor.getDutyEndTime()
             );
             doctorResponseDTOs.add(doctorResponseDTO);
         }
@@ -61,14 +65,18 @@ public class DoctorController {
         List<DoctorResponseDTO> doctorResponseDTOs = new ArrayList<>();
         for (Doctor doctor : doctors) {
             DoctorResponseDTO doctorResponseDTO = new DoctorResponseDTO(
-                doctor.getDoctorId(),
-                doctor.getName(),
-                doctor.getAge(),
-                doctor.getSpecialization(),
-                doctor.getDoctorAddress(),
-                doctor.getYearsOfExperience(),
-                doctor.getHoliday(),
-                doctor.getIsVerified()
+            		doctor.getDoctorId(),
+            	    doctor.getName(),
+            	    doctor.getAge(),
+            	    doctor.getSpecialization(),
+            	    doctor.getDoctorAddress(),
+            	    doctor.getYearsOfExperience(),
+            	    doctor.getHoliday(),
+            	    doctor.getIsVerified(),
+            	    doctor.getBreakStartTime(),
+            	    doctor.getBreakEndTime(),
+            	    doctor.getDutyStartTime(),
+            	    doctor.getDutyEndTime()
             );
             doctorResponseDTOs.add(doctorResponseDTO);
         }
@@ -85,14 +93,18 @@ public class DoctorController {
         
         // Convert Doctor entity to DoctorResponseDTO
         DoctorResponseDTO doctorResponseDTO = new DoctorResponseDTO(
-            doctor.getDoctorId(),
-            doctor.getName(),
-            doctor.getAge(),
-            doctor.getSpecialization(),
-            doctor.getDoctorAddress(),
-            doctor.getYearsOfExperience(),
-            doctor.getHoliday(),
-            doctor.getIsVerified()
+        		doctor.getDoctorId(),
+        	    doctor.getName(),
+        	    doctor.getAge(),
+        	    doctor.getSpecialization(),
+        	    doctor.getDoctorAddress(),
+        	    doctor.getYearsOfExperience(),
+        	    doctor.getHoliday(),
+        	    doctor.getIsVerified(),
+        	    doctor.getBreakStartTime(),
+        	    doctor.getBreakEndTime(),
+        	    doctor.getDutyStartTime(),
+        	    doctor.getDutyEndTime()
         );
         
         return doctorResponseDTO;
