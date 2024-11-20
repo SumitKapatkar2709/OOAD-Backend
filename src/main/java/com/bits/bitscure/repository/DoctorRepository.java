@@ -9,7 +9,8 @@ import com.bits.bitscure.entities.Doctor;
 public interface DoctorRepository extends JpaRepository<Doctor, Long> {
 
 	List<Doctor> findByIsVerifiedTrue();
-    // JpaRepository provides basic CRUD methods
+	
+	List<Doctor> findByIsVerifiedFalse();
 	
 	
 }

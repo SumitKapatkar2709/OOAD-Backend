@@ -33,6 +33,11 @@ public class DoctorServiceImpl implements DoctorService {
     }
     
     @Override
+	public List<Doctor> getAllUnverifiedDoctors() {
+    	return doctorRepository.findByIsVerifiedFalse();		 
+	}
+    
+    @Override
     public Doctor getDoctorsById(Long id) {
         Optional<Doctor> doctor = doctorRepository.findById(id);
 

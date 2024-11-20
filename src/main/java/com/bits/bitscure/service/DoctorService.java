@@ -16,6 +16,8 @@ public interface DoctorService {
     Doctor addDoctor(Doctor doctor);
 
 	Doctor saveOrUpdateDoctor(Doctor doctor);
+
+	List<Doctor> getAllUnverifiedDoctors();
     
     
     

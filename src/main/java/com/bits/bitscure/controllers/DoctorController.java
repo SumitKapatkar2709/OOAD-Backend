@@ -51,6 +51,29 @@ public class DoctorController {
         
         return doctorResponseDTOs;
     }
+    
+    @GetMapping("/doctors/unverified")
+    public List<DoctorResponseDTO> getAllUnverifiedDoctors() {
+        List<Doctor> doctors = doctorService.getAllUnverifiedDoctors();
+        
+        // Convert list of Doctor entities to list of DoctorResponseDTOs
+        List<DoctorResponseDTO> doctorResponseDTOs = new ArrayList<>();
+        for (Doctor doctor : doctors) {
+            DoctorResponseDTO doctorResponseDTO = new DoctorResponseDTO(
+                doctor.getDoctorId(),
+                doctor.getName(),
+                doctor.getAge(),
+                doctor.getSpecialization(),
+                doctor.getDoctorAddress(),
+                doctor.getYearsOfExperience(),
+                doctor.getHoliday(),
+                doctor.getIsVerified()
+            );
+            doctorResponseDTOs.add(doctorResponseDTO);
+        }
+        
+        return doctorResponseDTOs;
+    }
 
     
     @GetMapping("/doctors/{id}")
