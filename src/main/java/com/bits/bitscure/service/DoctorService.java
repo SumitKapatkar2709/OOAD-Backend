@@ -2,16 +2,21 @@ package com.bits.bitscure.service;
 
 import java.util.List;
 
-import com.bits.bitscure.entities.Doctors;
+import com.bits.bitscure.entities.Doctor;
 
 public interface DoctorService {
-    List<Doctors> getAllDoctors();
+    List<Doctor> getAllDoctors();
 
-    Doctors getDoctorsById(Long id);
+    Doctor getDoctorsById(Long id);
     
     void deleteDoctorById(Long id);
     
-    Doctors updateDoctor(Long id, Doctors updatedDoctor);
+    Doctor updateDoctor(Long id, Doctor updatedDoctor);
     
-    Doctors addDoctor(Doctors doctor);
+    Doctor addDoctor(Doctor doctor);
+
+	Doctor saveOrUpdateDoctor(Doctor doctor);
+    
+    
+    
 }
