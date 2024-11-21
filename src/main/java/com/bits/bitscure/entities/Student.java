@@ -27,7 +27,7 @@ public class Student {
     private String studentName;
 
     @Column(name = "student_age")
-    private int age;
+    private int studentAge;
 
 
     @Column(name = "student_contact")
@@ -40,12 +40,12 @@ public class Student {
     @OneToMany(mappedBy = "student")
     private List<Appointment> bookedSlots;
 
-	public Student(Long studentId, String studentName, int age, String contactNumber, String email,
+	public Student(Long studentId, String studentName, int studentAge, String contactNumber, String email,
 			List<Appointment> bookedSlots) {
 		super();
 		this.studentId = studentId;
 		this.studentName = studentName;
-		this.age = age;
+		this.studentAge = studentAge;
 		this.contactNumber = contactNumber;
 		this.email = email;
 		this.bookedSlots = bookedSlots;
@@ -72,12 +72,13 @@ public class Student {
 		this.studentName = studentName;
 	}
 
-	public int getAge() {
-		return age;
+	
+	public int getStudentAge() {
+		return studentAge;
 	}
 
-	public void setAge(int age) {
-		this.age = age;
+	public void setStudentAge(int studentAge) {
+		this.studentAge = studentAge;
 	}
 
 	public String getContactNumber() {

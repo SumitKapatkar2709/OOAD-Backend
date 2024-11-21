@@ -9,8 +9,8 @@ import com.bits.bitscure.entities.Appointment;
 public class DoctorResponseDTO {
     
 	private Long doctorId;
-    private String name;
-    private int age;
+    private String doctorName;
+    private int doctorAge;
     private String specialization;
     private String doctorAddress;
     private int yearsOfExperience;
@@ -21,13 +21,13 @@ public class DoctorResponseDTO {
     private LocalTime dutyStartTime;
     private LocalTime dutyEndTime;
     private List<Appointment> slots;
-	public DoctorResponseDTO(Long doctorId, String name, int age, String specialization, String doctorAddress,
-			int yearsOfExperience, String holiday, Boolean isVerified, LocalTime breakStartTime, LocalTime breakEndTime,
-			LocalTime dutyStartTime, LocalTime dutyEndTime, List<Appointment> slots) {
+	public DoctorResponseDTO(Long doctorId, String doctorName, int doctorAge, String specialization,
+			String doctorAddress, int yearsOfExperience, String holiday, Boolean isVerified, LocalTime breakStartTime,
+			LocalTime breakEndTime, LocalTime dutyStartTime, LocalTime dutyEndTime, List<Appointment> slots) {
 		super();
 		this.doctorId = doctorId;
-		this.name = name;
-		this.age = age;
+		this.doctorName = doctorName;
+		this.doctorAge = doctorAge;
 		this.specialization = specialization;
 		this.doctorAddress = doctorAddress;
 		this.yearsOfExperience = yearsOfExperience;
@@ -45,17 +45,17 @@ public class DoctorResponseDTO {
 	public void setDoctorId(Long doctorId) {
 		this.doctorId = doctorId;
 	}
-	public String getName() {
-		return name;
+	public String getDoctorName() {
+		return doctorName;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setDoctorName(String doctorName) {
+		this.doctorName = doctorName;
 	}
-	public int getAge() {
-		return age;
+	public int getDoctorAge() {
+		return doctorAge;
 	}
-	public void setAge(int age) {
-		this.age = age;
+	public void setDoctorAge(int doctorAge) {
+		this.doctorAge = doctorAge;
 	}
 	public String getSpecialization() {
 		return specialization;
@@ -117,6 +117,9 @@ public class DoctorResponseDTO {
 	public void setSlots(List<Appointment> slots) {
 		this.slots = slots;
 	}
+    
+    
+	
 	
     
     
