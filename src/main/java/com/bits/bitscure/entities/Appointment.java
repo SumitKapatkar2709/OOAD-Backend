@@ -34,14 +34,15 @@ public class Appointment {
 	    private Student student;  
 
 	    private boolean isAvailable;
+	    
+	    private String details;
+	    private String diagnosis;
+	    private String prescription;
 
-		
-
-		
-		
 
 		public Appointment(Long appointmentId, LocalDateTime appointmentStartTime, LocalDateTime appointmentEndTime,
-				Doctor doctor, Student student, boolean isAvailable) {
+				Doctor doctor, Student student, boolean isAvailable, String details, String diagnosis,
+				String prescription) {
 			super();
 			this.appointmentId = appointmentId;
 			this.appointmentStartTime = appointmentStartTime;
@@ -49,9 +50,10 @@ public class Appointment {
 			this.doctor = doctor;
 			this.student = student;
 			this.isAvailable = isAvailable;
+			this.details = details;
+			this.diagnosis = diagnosis;
+			this.prescription = prescription;
 		}
-
-
 
 		public Appointment() {
 			super();
@@ -110,8 +112,29 @@ public class Appointment {
 			this.isAvailable = isAvailable;
 		}
 
-		
-	    
-	    
+		public String getDetails() {
+			return details;
+		}
+
+		public void setDetails(String details) {
+			this.details = details;
+		}
+
+		public String getDiagnosis() {
+			return diagnosis;
+		}
+
+		public void setDiagnosis(String diagnosis) {
+			this.diagnosis = diagnosis;
+		}
+
+		public String getPrescription() {
+			return prescription;
+		}
+
+		public void setPrescription(String prescription) {
+			this.prescription = prescription;
+		}
+    
 	    
 }
