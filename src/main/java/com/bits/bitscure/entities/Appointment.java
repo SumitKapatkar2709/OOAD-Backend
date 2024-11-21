@@ -18,7 +18,7 @@ import jakarta.persistence.Table;
 public class Appointment {
 	 @Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	    private Long id;
+	    private Long appointmentId;
 
 	    private LocalDateTime appointmentStartTime;
 	    private LocalDateTime appointmentEndTime;
@@ -37,35 +37,38 @@ public class Appointment {
 
 		
 
-		public Appointment(Long id, LocalDateTime appointmentStartTime, LocalDateTime appointmentEndTime, Doctor doctor,
-				Student student, boolean isAvailable) {
+		
+		
+
+		public Appointment(Long appointmentId, LocalDateTime appointmentStartTime, LocalDateTime appointmentEndTime,
+				Doctor doctor, Student student, boolean isAvailable) {
 			super();
-			this.id = id;
+			this.appointmentId = appointmentId;
 			this.appointmentStartTime = appointmentStartTime;
 			this.appointmentEndTime = appointmentEndTime;
 			this.doctor = doctor;
 			this.student = student;
 			this.isAvailable = isAvailable;
 		}
-		
-		
+
+
 
 		public Appointment() {
 			super();
 			// TODO Auto-generated constructor stub
 		}
 
-
-
-		public Long getId() {
-			return id;
+				public Long getAppointmentId() {
+			return appointmentId;
 		}
 
-		public void setId(Long id) {
-			this.id = id;
+
+
+		public void setAppointmentId(Long appointmentId) {
+			this.appointmentId = appointmentId;
 		}
 
-		
+
 
 		public LocalDateTime getAppointmentStartTime() {
 			return appointmentStartTime;

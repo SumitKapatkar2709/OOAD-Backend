@@ -20,10 +20,10 @@ public class DoctorResponseDTO {
     private LocalTime breakEndTime;
     private LocalTime dutyStartTime;
     private LocalTime dutyEndTime;
-    private List<Appointment> slots;
+    private List<Appointment> appointment;
 	public DoctorResponseDTO(Long doctorId, String doctorName, int doctorAge, String specialization,
 			String doctorAddress, int yearsOfExperience, String holiday, Boolean isVerified, LocalTime breakStartTime,
-			LocalTime breakEndTime, LocalTime dutyStartTime, LocalTime dutyEndTime, List<Appointment> slots) {
+			LocalTime breakEndTime, LocalTime dutyStartTime, LocalTime dutyEndTime, List<Appointment> appointment) {
 		super();
 		this.doctorId = doctorId;
 		this.doctorName = doctorName;
@@ -37,7 +37,7 @@ public class DoctorResponseDTO {
 		this.breakEndTime = breakEndTime;
 		this.dutyStartTime = dutyStartTime;
 		this.dutyEndTime = dutyEndTime;
-		this.slots = slots;
+		this.appointment = appointment;
 	}
 	public Long getDoctorId() {
 		return doctorId;
@@ -111,18 +111,13 @@ public class DoctorResponseDTO {
 	public void setDutyEndTime(LocalTime dutyEndTime) {
 		this.dutyEndTime = dutyEndTime;
 	}
-	public List<Appointment> getSlots() {
-		return slots;
+	public List<Appointment> getAppointment() {
+		return appointment;
 	}
-	public void setSlots(List<Appointment> slots) {
-		this.slots = slots;
+	public void setAppointment(List<Appointment> appointment) {
+		this.appointment = appointment;
 	}
-    
-    
-	
-	
-    
-    
+	   
     
    
 }
