@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.aspectj.weaver.patterns.ConcreteCflowPointcut.Slot;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.bits.bitscure.DTO.response.StudentResponseDTO;
 import com.bits.bitscure.DTO.response.StudentResponseDTO.SlotDoctorDetails;
+import com.bits.bitscure.entities.Appointment;
 import com.bits.bitscure.entities.Doctor;
 import com.bits.bitscure.entities.Student;
 import com.bits.bitscure.repository.AppointmentRepository;
@@ -23,7 +23,7 @@ public class StudentService {
     private StudentRepository studentRepository;
 
     @Autowired
-    private AppointmentRepository slotRepository;
+    private AppointmentRepository appointmentRepository;
 
     @Autowired
     private DoctorRepository doctorRepository;
@@ -112,6 +112,18 @@ public class StudentService {
         responseDTO.setSlots(slotDetails);
 
         return responseDTO;
+    }
+    
+    
+    public boolean assignStudentToAppointment(Long appointmentId, Long studentId) {
+        // Call the repository method to update the studentId
+        try {
+            appointmentRepository.updateStudentForAppointment(appointmentId, studentId);
+            return true;
+        } catch (Exception e) {
+            // Handle the case if something goes wrong (e.g., invalid appointmentId or studentId)
+            return false;
+        }
     }
 
 }
