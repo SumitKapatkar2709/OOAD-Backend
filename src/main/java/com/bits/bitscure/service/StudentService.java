@@ -54,7 +54,7 @@ public class StudentService {
             // Fetch booked slots for the student (assuming `student.getBookedSlots()` provides a list of slots)
             List<SlotDoctorDetails> slotDetails = student.getBookedSlots().stream().map(slot -> {
                 SlotDoctorDetails slotDoctorDetails = new SlotDoctorDetails();
-                slotDoctorDetails.setSlotId(slot.getId());
+                slotDoctorDetails.setSlotId(slot.getAppointmentId());
                 slotDoctorDetails.setAppointmentStartTime(slot.getAppointmentStartTime());
                 slotDoctorDetails.setAppointmentEndTime(slot.getAppointmentEndTime());
                 slotDoctorDetails.setAvailable(slot.isAvailable());
@@ -93,7 +93,7 @@ public class StudentService {
 
         List<SlotDoctorDetails> slotDetails = student.getBookedSlots().stream().map(slot -> {
             SlotDoctorDetails slotDoctorDetails = new SlotDoctorDetails();
-            slotDoctorDetails.setSlotId(slot.getId());
+            slotDoctorDetails.setSlotId(slot.getAppointmentId());
             slotDoctorDetails.setAppointmentStartTime(slot.getAppointmentStartTime());
             slotDoctorDetails.setAppointmentEndTime(slot.getAppointmentEndTime());
             slotDoctorDetails.setAvailable(slot.isAvailable());
