@@ -2,6 +2,8 @@ package com.bits.bitscure.entities;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -21,34 +23,36 @@ public class Student {
     @Column(name = "student_id")
     private Long studentId;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "student_name")
+    private String studentName;
 
-    @Column(name = "age")
+    @Column(name = "student_age")
     private int age;
 
-    @Column(name = "gender")
-    private String gender;
 
-    @Column(name = "contact_number")
+    @Column(name = "student_contact")
     private String contactNumber;
 
-    @Column(name = "email")
+    @Column(name = "student_email")
     private String email;
     
+    @JsonIgnore
     @OneToMany(mappedBy = "student")
     private List<Appointment> bookedSlots;
 
-	public Student(Long studentId, String name, int age, String gender, String contactNumber, String email,
+	public Student(Long studentId, String studentName, int age, String contactNumber, String email,
 			List<Appointment> bookedSlots) {
 		super();
 		this.studentId = studentId;
-		this.name = name;
+		this.studentName = studentName;
 		this.age = age;
-		this.gender = gender;
 		this.contactNumber = contactNumber;
 		this.email = email;
 		this.bookedSlots = bookedSlots;
+	}
+
+	public Student() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public Long getStudentId() {
@@ -59,12 +63,13 @@ public class Student {
 		this.studentId = studentId;
 	}
 
-	public String getName() {
-		return name;
+
+	public String getStudentName() {
+		return studentName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
 	}
 
 	public int getAge() {
@@ -73,14 +78,6 @@ public class Student {
 
 	public void setAge(int age) {
 		this.age = age;
-	}
-
-	public String getGender() {
-		return gender;
-	}
-
-	public void setGender(String gender) {
-		this.gender = gender;
 	}
 
 	public String getContactNumber() {
@@ -107,8 +104,6 @@ public class Student {
 		this.bookedSlots = bookedSlots;
 	}
     
-    
-    
-    
+     
 }
 

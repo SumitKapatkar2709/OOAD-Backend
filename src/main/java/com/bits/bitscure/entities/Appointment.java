@@ -2,6 +2,8 @@ package com.bits.bitscure.entities;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,10 +25,12 @@ public class Appointment {
 
 	    @ManyToOne
 	    @JoinColumn(name = "doctor_id")
+	    @JsonIgnore
 	    private Doctor doctor;  
 
 	    @ManyToOne
 	    @JoinColumn(name = "student_id")
+
 	    private Student student;  
 
 	    private boolean isAvailable;

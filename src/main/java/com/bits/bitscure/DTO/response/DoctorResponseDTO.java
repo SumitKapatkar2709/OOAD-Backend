@@ -2,6 +2,9 @@ package com.bits.bitscure.DTO.response;
 
 
 import java.time.LocalTime;
+import java.util.List;
+
+import com.bits.bitscure.entities.Appointment;
 
 public class DoctorResponseDTO {
     
@@ -17,9 +20,10 @@ public class DoctorResponseDTO {
     private LocalTime breakEndTime;
     private LocalTime dutyStartTime;
     private LocalTime dutyEndTime;
+    private List<Appointment> slots;
 	public DoctorResponseDTO(Long doctorId, String name, int age, String specialization, String doctorAddress,
 			int yearsOfExperience, String holiday, Boolean isVerified, LocalTime breakStartTime, LocalTime breakEndTime,
-			LocalTime dutyStartTime, LocalTime dutyEndTime) {
+			LocalTime dutyStartTime, LocalTime dutyEndTime, List<Appointment> slots) {
 		super();
 		this.doctorId = doctorId;
 		this.name = name;
@@ -33,6 +37,7 @@ public class DoctorResponseDTO {
 		this.breakEndTime = breakEndTime;
 		this.dutyStartTime = dutyStartTime;
 		this.dutyEndTime = dutyEndTime;
+		this.slots = slots;
 	}
 	public Long getDoctorId() {
 		return doctorId;
@@ -106,6 +111,14 @@ public class DoctorResponseDTO {
 	public void setDutyEndTime(LocalTime dutyEndTime) {
 		this.dutyEndTime = dutyEndTime;
 	}
+	public List<Appointment> getSlots() {
+		return slots;
+	}
+	public void setSlots(List<Appointment> slots) {
+		this.slots = slots;
+	}
+	
+    
     
     
    

@@ -49,7 +49,8 @@ public class DoctorController {
             	    doctor.getBreakStartTime(),
             	    doctor.getBreakEndTime(),
             	    doctor.getDutyStartTime(),
-            	    doctor.getDutyEndTime()
+            	    doctor.getDutyEndTime(),
+            	    doctor.getSlots()
             );
             doctorResponseDTOs.add(doctorResponseDTO);
         }
@@ -76,7 +77,8 @@ public class DoctorController {
             	    doctor.getBreakStartTime(),
             	    doctor.getBreakEndTime(),
             	    doctor.getDutyStartTime(),
-            	    doctor.getDutyEndTime()
+            	    doctor.getDutyEndTime(),
+            	    doctor.getSlots()
             );
             doctorResponseDTOs.add(doctorResponseDTO);
         }
@@ -104,7 +106,8 @@ public class DoctorController {
         	    doctor.getBreakStartTime(),
         	    doctor.getBreakEndTime(),
         	    doctor.getDutyStartTime(),
-        	    doctor.getDutyEndTime()
+        	    doctor.getDutyEndTime(),
+        	    doctor.getSlots()
         );
         
         return doctorResponseDTO;
