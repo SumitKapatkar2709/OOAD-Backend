@@ -62,7 +62,7 @@ public class StudentService {
                 // Fetch doctor details associated with the slot
                 Doctor doctor = slot.getDoctor();
                 slotDoctorDetails.setDoctorId(doctor.getDoctorId());
-                slotDoctorDetails.setDoctorName(doctor.getName());
+                slotDoctorDetails.setDoctorName(doctor.getDoctorName());
                 slotDoctorDetails.setDoctorAge(doctor.getAge());
                 slotDoctorDetails.setSpecialization(doctor.getSpecialization());
                 slotDoctorDetails.setDoctorAddress(doctor.getDoctorAddress());
@@ -100,7 +100,7 @@ public class StudentService {
 
             Doctor doctor = slot.getDoctor();
             slotDoctorDetails.setDoctorId(doctor.getDoctorId());
-            slotDoctorDetails.setDoctorName(doctor.getName());
+            slotDoctorDetails.setDoctorName(doctor.getDoctorName());
             slotDoctorDetails.setDoctorAge(doctor.getAge());
             slotDoctorDetails.setSpecialization(doctor.getSpecialization());
             slotDoctorDetails.setDoctorAddress(doctor.getDoctorAddress());

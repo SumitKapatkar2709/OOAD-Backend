@@ -20,7 +20,7 @@ import com.bits.bitscure.DTO.response.DoctorResponseDTO;
 import com.bits.bitscure.entities.Doctor;
 import com.bits.bitscure.service.DoctorService;
 
-@CrossOrigin(origins = "", allowedHeaders = "", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE,RequestMethod.PUT})
+@CrossOrigin(origins = "*", allowedHeaders = "*", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE,RequestMethod.PUT})
 @RestController
 public class DoctorController {
 
@@ -39,7 +39,7 @@ public class DoctorController {
         for (Doctor doctor : doctors) {
             DoctorResponseDTO doctorResponseDTO = new DoctorResponseDTO(
             		doctor.getDoctorId(),
-            	    doctor.getName(),
+            	    doctor.getDoctorName(),
             	    doctor.getAge(),
             	    doctor.getSpecialization(),
             	    doctor.getDoctorAddress(),
@@ -67,7 +67,7 @@ public class DoctorController {
         for (Doctor doctor : doctors) {
             DoctorResponseDTO doctorResponseDTO = new DoctorResponseDTO(
             		doctor.getDoctorId(),
-            	    doctor.getName(),
+            	    doctor.getDoctorName(),
             	    doctor.getAge(),
             	    doctor.getSpecialization(),
             	    doctor.getDoctorAddress(),
@@ -96,7 +96,7 @@ public class DoctorController {
         // Convert Doctor entity to DoctorResponseDTO
         DoctorResponseDTO doctorResponseDTO = new DoctorResponseDTO(
         		doctor.getDoctorId(),
-        	    doctor.getName(),
+        	    doctor.getDoctorName(),
         	    doctor.getAge(),
         	    doctor.getSpecialization(),
         	    doctor.getDoctorAddress(),

@@ -56,7 +56,7 @@ public class DoctorServiceImpl implements DoctorService {
 
         if (existingDoctor.isPresent()) {
             Doctor doctor = existingDoctor.get();
-            doctor.setName(updatedDoctor.getName());
+            doctor.setDoctorName(updatedDoctor.getDoctorName());
             doctor.setAge(updatedDoctor.getAge());
             doctor.setSpecialization(updatedDoctor.getSpecialization());
             doctor.setDoctorAddress(updatedDoctor.getDoctorAddress());
@@ -134,7 +134,7 @@ public class DoctorServiceImpl implements DoctorService {
             if (existingDoctor.isPresent()) {
                 // Update the existing doctor
                 Doctor updatedDoctor = existingDoctor.get();
-                updatedDoctor.setName(doctor.getName());
+                updatedDoctor.setDoctorName(doctor.getDoctorName());
                 updatedDoctor.setAge(doctor.getAge());
                 updatedDoctor.setSpecialization(doctor.getSpecialization());
                 updatedDoctor.setDoctorAddress(doctor.getDoctorAddress());

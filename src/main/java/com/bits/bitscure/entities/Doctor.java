@@ -26,7 +26,7 @@ public class Doctor {
 	private Long doctorId;
 	
 	@Column(name = "doctor_name")  
-    private String name;
+    private String doctorName;
     
     @Column(name = "doctor_age")  
     private int age;
@@ -61,12 +61,12 @@ public class Doctor {
     @OneToMany(mappedBy = "doctor", cascade = CascadeType.ALL)
     private List<Appointment> slots;
 
-	public Doctor(Long doctorId, String name, int age, String specialization, String doctorAddress,
+	public Doctor(Long doctorId, String doctorName, int age, String specialization, String doctorAddress,
 			int yearsOfExperience, String holiday, LocalTime breakStartTime, LocalTime breakEndTime,
 			LocalTime dutyStartTime, LocalTime dutyEndTime, Boolean isVerified, List<Appointment> slots) {
 		super();
 		this.doctorId = doctorId;
-		this.name = name;
+		this.doctorName = doctorName;
 		this.age = age;
 		this.specialization = specialization;
 		this.doctorAddress = doctorAddress;
@@ -97,13 +97,19 @@ public class Doctor {
 		this.doctorId = doctorId;
 	}
 
-	public String getName() {
-		return name;
+	
+
+	public String getDoctorName() {
+		return doctorName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+
+
+	public void setDoctorName(String doctorName) {
+		this.doctorName = doctorName;
 	}
+
+
 
 	public int getAge() {
 		return age;

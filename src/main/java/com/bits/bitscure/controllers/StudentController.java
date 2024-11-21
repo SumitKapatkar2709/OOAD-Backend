@@ -17,7 +17,7 @@ import com.bits.bitscure.DTO.response.StudentResponseDTO;
 import com.bits.bitscure.service.StudentService;
 
 
-@CrossOrigin(origins = "", allowedHeaders = "", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE,RequestMethod.PUT})
+@CrossOrigin(origins = "*", allowedHeaders = "*", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.DELETE,RequestMethod.PUT})
 @RestController
 public class StudentController {
 
