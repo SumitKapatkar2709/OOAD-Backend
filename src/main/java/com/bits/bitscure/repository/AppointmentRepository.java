@@ -20,7 +20,7 @@ public interface AppointmentRepository extends JpaRepository<Appointment, Long> 
 	
 	 @Modifying
 	    @Transactional
-	    @Query("UPDATE Appointment a SET a.student.studentId = :studentId WHERE a.appointmentId = :appointmentId")
+	    @Query("UPDATE Appointment a SET a.student.studentId = :studentId, a.isAvailable = false WHERE a.appointmentId = :appointmentId")
 	    void updateStudentForAppointment(@Param("appointmentId") Long appointmentId, @Param("studentId") Long studentId);
 	 
 	 
