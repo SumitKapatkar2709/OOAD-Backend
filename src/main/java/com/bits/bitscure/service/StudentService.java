@@ -126,5 +126,9 @@ public class StudentService {
         }
     }
 
+	public Student findByEmail(String email) {
+		return studentRepository.findByEmail(email);
+	}
+
 }
 
